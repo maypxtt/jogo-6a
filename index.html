@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Memória — Língua Portuguesa | 6º ano</title>
+
+  <!-- Fonte lúdica (com fallback caso não carregue) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Folha de estilos -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Enfeites de fundo (puramente decorativos) -->
+  <div class="enfeites" aria-hidden="true">
+    <span class="enfeite e1">📖</span>
+    <span class="enfeite e2">✏️</span>
+    <span class="enfeite e3">🎒</span>
+    <span class="enfeite e4">📝</span>
+    <span class="enfeite e5">🔤</span>
+  </div>
+
+  <!-- ================= CABEÇALHO ================= -->
+  <header class="cabecalho">
+    <h1><span aria-hidden="true">📚</span> Jogo da Memória</h1>
+    <p class="subtitulo">Língua Portuguesa · 6º ano do Ensino Fundamental</p>
+  </header>
+
+  <!-- ================= CONTEÚDO PRINCIPAL ================= -->
+  <main class="conteudo">
+
+    <!-- ---------- TELA 1: INÍCIO ---------- -->
+    <section id="tela-inicio" class="tela ativa" aria-labelledby="titulo-inicio">
+      <h2 id="titulo-inicio">Bem-vindo(a), detetive das palavras! 🕵️</h2>
+      <p class="texto">
+        Encontre os <strong>pares de cartas</strong> que combinam entre si.
+        Vire duas cartas por vez e use a memória!
+      </p>
+
+      <ul class="regras">
+        <li>🔤 <strong>Fase 1:</strong> Coletivos</li>
+        <li>🔁 <strong>Fase 2:</strong> Sinônimos</li>
+        <li>⚡ <strong>Fase 3:</strong> Antônimos</li>
+      </ul>
+
+      <p class="texto">
+        Cada <strong>acerto</strong> vale <strong>+10 pontos</strong> e cada
+        <strong>erro</strong> custa <strong>−2 pontos</strong>.
+        Ao completar uma fase você ganha um <strong>bônus de +20 pontos</strong>!
+      </p>
+
+      <button id="btn-comecar" class="btn btn-principal" type="button">▶ Começar a jogar</button>
+    </section>
+
+    <!-- ---------- TELA 2: JOGO ---------- -->
+    <section id="tela-jogo" class="tela" aria-labelledby="titulo-fase">
+
+      <div class="painel">
+        <div class="painel-item">
+          <span class="rotulo">Fase</span>
+          <span id="info-fase" class="valor">1/3</span>
+        </div>
+        <div class="painel-item">
+          <span class="rotulo">Pontos</span>
+          <span id="info-pontos" class="valor">0</span>
+        </div>
+        <div class="painel-item">
+          <span class="rotulo">Jogadas</span>
+          <span id="info-jogadas" class="valor">0</span>
+        </div>
+        <div class="painel-item">
+          <span class="rotulo">Tempo</span>
+          <span id="info-tempo" class="valor">00:00</span>
+        </div>
+      </div>
+
+      <h2 id="titulo-fase" class="titulo-fase">Fase 1 — Coletivos</h2>
+      <p id="dica-fase" class="dica">Ligue cada coletivo ao grupo de seres que ele nomeia.</p>
+
+      <div id="tabuleiro" class="tabuleiro" aria-label="Tabuleiro do jogo da memória"></div>
+
+      <div class="acoes">
+        <button id="btn-reiniciar" class="btn btn-secundario" type="button">🔄 Reiniciar fase</button>
+        <button id="btn-sair" class="btn btn-secundario" type="button">🏠 Voltar ao início</button>
+      </div>
+
+      <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- ---------- TELA 3: FINAL ---------- -->
+    <section id="tela-final" class="tela" aria-labelledby="titulo-final">
+      <h2 id="titulo-final">🎉 Parabéns, você completou o desafio!</h2>
+      <p id="texto-final" class="texto"></p>
+
+      <div class="resultado">
+        <div class="resultado-item">
+          <span class="rotulo">Pontuação</span>
+          <span id="final-pontos" class="valor">0</span>
+        </div>
+        <div class="resultado-item">
+          <span class="rotulo">Jogadas</span>
+          <span id="final-jogadas" class="valor">0</span>
+        </div>
+        <div class="resultado-item">
+          <span class="rotulo">Tempo</span>
+          <span id="final-tempo" class="valor">00:00</span>
+        </div>
+      </div>
+
+      <button id="btn-jogar-novamente" class="btn btn-principal" type="button">🔁 Jogar novamente</button>
+    </section>
+
+  </main>
+
+  <!-- ================= RODAPÉ ================= -->
+  <footer class="rodape">
+    <p>Projeto educativo · HTML + CSS + JavaScript · Conteúdo de Língua Portuguesa — 6º ano</p>
+  </footer>
+
+  <!-- Lógica do jogo -->
+  <script src="script.js"></script>
+</body>
+</html>
